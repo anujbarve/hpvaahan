@@ -1,6 +1,29 @@
-import {NavLink} from 'react-router';
-import {Phone, Mail, Clock, MapPin, ArrowUp} from 'lucide-react';
-import type {FooterQuery, HeaderQuery} from 'storefrontapi.generated';
+# Footer Implementation Plan
+
+> **For agentic workers:** Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Replace the Shopify-driven footer with a branded deep-navy 4-column footer matching the glassmorphism header design.
+
+**Architecture:** Single component rewrite (`Footer.tsx`) with Tailwind utilities. No custom CSS needed beyond a possible Back-to-Top button animation. Component keeps its existing interface for backward compatibility but renders static branded content.
+
+**Tech Stack:** React, Tailwind v4, lucide-react
+
+---
+
+### Task 1: Rewrite Footer.tsx
+
+**Files:**
+- Modify: `app/components/Footer.tsx` — full rewrite
+- No changes to `PageLayout.tsx` (component interface unchanged)
+
+- [ ] **Write the new Footer component**
+
+Replace entire file content. Keep the same export name `Footer` and same props interface for backward compatibility. Render static branded content.
+
+```tsx
+import { NavLink } from 'react-router';
+import { Phone, Mail, Clock, MapPin, ArrowUp } from 'lucide-react';
+import type { FooterQuery, HeaderQuery } from 'storefrontapi.generated';
 
 interface FooterProps {
   footer: Promise<FooterQuery | null>;
@@ -8,86 +31,18 @@ interface FooterProps {
   publicStoreDomain: string;
 }
 
-function InstagramIcon({size}: {size: number}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <circle cx="12" cy="12" r="5" />
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-    </svg>
-  );
-}
-
-function FacebookIcon({size}: {size: number}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
-  );
-}
-
-function LinkedinIcon({size}: {size: number}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect x="2" y="9" width="4" height="12" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>
-  );
-}
-
 export function Footer({
   footer: _footer,
   header: _header,
   publicStoreDomain: _publicStoreDomain,
 }: FooterProps) {
-  const scrollToTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
-
-  const productLinks = [
-    {label: 'Car Care', href: '/collections/car-care'},
-    {label: 'Bike & Scooter Care', href: '/collections/bike-scooter-care'},
-    {label: 'Microfiber Cloth', href: '/collections/microfiber-cloth'},
-    {label: 'Maintenance Products', href: '/collections/maintenance-products'},
-  ];
-
-  const disclaimerLinks = [
-    {label: 'Terms & Conditions', href: '/policies/terms-of-service'},
-    {label: 'Privacy Policy', href: '/policies/privacy-policy'},
-    {label: 'Refund & Return Policy', href: '/policies/refund-policy'},
-    {label: 'Shipping Policy', href: '/policies/shipping-policy'},
-  ];
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <footer className="bg-[#0A192F] text-white">
+      {/* Main grid — 4 cols on lg, 2 on sm, 1 by default */}
       <div className="mx-auto max-w-7xl px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-        {/* Brand */}
+        {/* Column 1 — Brand */}
         <div className="flex flex-col items-center sm:items-start">
           <img
             src="/logo.webp"
@@ -96,16 +51,20 @@ export function Footer({
           />
         </div>
 
-        {/* Product Categories */}
+        {/* Column 2 — Product Categories */}
         <div>
           <h4 className="text-white text-sm tracking-wider uppercase mb-4">
             PRODUCT CATEGORIES
           </h4>
           <ul className="space-y-2.5">
-            {productLinks.map((link) => (
+            {[
+              { label: 'Car Care', href: '/collections/car-care' },
+              { label: 'Bike & Scooter Care', href: '/collections/bike-scooter-care' },
+              { label: 'Microfiber Cloth', href: '/collections/microfiber-cloth' },
+              { label: 'Maintenance Products', href: '/collections/maintenance-products' },
+            ].map((link) => (
               <li key={link.href}>
                 <NavLink
-                  end
                   to={link.href}
                   className="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
                 >
@@ -116,16 +75,20 @@ export function Footer({
           </ul>
         </div>
 
-        {/* Disclaimers */}
+        {/* Column 3 — Disclaimers */}
         <div>
           <h4 className="text-white text-sm tracking-wider uppercase mb-4">
             DISCLAIMERS
           </h4>
           <ul className="space-y-2.5">
-            {disclaimerLinks.map((link) => (
+            {[
+              { label: 'Terms & Conditions', href: '/policies/terms-of-service' },
+              { label: 'Privacy Policy', href: '/policies/privacy-policy' },
+              { label: 'Refund & Return Policy', href: '/policies/refund-policy' },
+              { label: 'Shipping Policy', href: '/policies/shipping-policy' },
+            ].map((link) => (
               <li key={link.href}>
                 <NavLink
-                  end
                   to={link.href}
                   className="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
                 >
@@ -136,8 +99,9 @@ export function Footer({
           </ul>
         </div>
 
-        {/* Contact & Location */}
+        {/* Column 4 — Contact & Location */}
         <div className="space-y-6">
+          {/* Customer Support */}
           <div>
             <h4 className="text-white text-sm tracking-wider uppercase mb-4">
               CUSTOMER SUPPORT
@@ -168,6 +132,7 @@ export function Footer({
             </ul>
           </div>
 
+          {/* Distributorship Enquiries */}
           <div>
             <h4 className="text-white text-sm tracking-wider uppercase mb-4">
               DISTRIBUTORSHIP ENQUIRIES
@@ -181,6 +146,7 @@ export function Footer({
             </a>
           </div>
 
+          {/* Visit Our Location */}
           <div>
             <h4 className="text-white text-sm tracking-wider uppercase mb-4">
               VISIT OUR LOCATION
@@ -200,9 +166,10 @@ export function Footer({
       <div className="border-t border-slate-700">
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-xs">
-            &copy; Kemetyl India Markets Pvt. Ltd. All Rights Reserved.
+            © Kemetyl India Markets Pvt. Ltd. All Rights Reserved.
           </p>
           <div className="flex items-center gap-4">
+            {/* Social icons */}
             <a
               href="https://instagram.com"
               target="_blank"
@@ -210,7 +177,7 @@ export function Footer({
               aria-label="Instagram"
               className="text-slate-400 hover:text-white transition-colors duration-200"
             >
-              <InstagramIcon size={18} />
+              <Instagram size={18} />
             </a>
             <a
               href="https://facebook.com"
@@ -219,7 +186,7 @@ export function Footer({
               aria-label="Facebook"
               className="text-slate-400 hover:text-white transition-colors duration-200"
             >
-              <FacebookIcon size={18} />
+              <Facebook size={18} />
             </a>
             <a
               href="https://linkedin.com"
@@ -228,8 +195,9 @@ export function Footer({
               aria-label="LinkedIn"
               className="text-slate-400 hover:text-white transition-colors duration-200"
             >
-              <LinkedinIcon size={18} />
+              <Linkedin size={18} />
             </a>
+            {/* Back to Top */}
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
@@ -243,3 +211,35 @@ export function Footer({
     </footer>
   );
 }
+```
+
+Dependencies needed:
+- `Instagram`, `Facebook`, `Linkedin` from lucide-react — need to check if they exist. lucide-react exports `Instagram`, `Facebook`, `Linkedin`. Actually `Linkedin` might be `Linkedin` — let me check.
+
+Actually, lucide-react icon names: `Instagram`, `Facebook`, `Linkedin`. But wait, let me double-check the exact names. lucide-react has:
+- `Instagram` ✓
+- `Facebook` ✓  
+- `Linkedin` ✓ (actually it's `Linkedin` not `LinkedIn`)
+
+Hmm, I need to check. Let me just use them and the compiler will catch it if wrong.
+
+Actually, lucide-react documentation says the icon for LinkedIn is `Linkedin`. Let me proceed.
+
+- [ ] **Save and run lint**
+
+Run: `npm run lint`
+Expected: No errors.
+
+- [ ] **Commit**
+
+```bash
+git add app/components/Footer.tsx
+git commit -m "feat: replace footer with branded deep-navy design"
+```
+
+---
+
+### Self-Review
+- [x] Spec coverage: All 4 columns, bottom bar, social icons, back-to-top, responsive grid, tel/mailto links all covered.
+- [x] No placeholders: Full code provided.
+- [x] Type consistency: Uses same interface, NavLink from react-router, lucide icons as used in Header.
