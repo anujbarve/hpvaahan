@@ -1,4 +1,4 @@
-import {Suspense} from 'react';
+import {Suspense, useState, useEffect} from 'react';
 import {Await, NavLink, useAsyncValue} from 'react-router';
 import {
   type CartViewPayload,
@@ -7,6 +7,7 @@ import {
 } from '@shopify/hydrogen';
 import type {HeaderQuery, CartApiQueryFragment} from 'storefrontapi.generated';
 import {useAside} from '~/components/Aside';
+import {Menu as MenuIcon} from 'lucide-react';
 
 interface HeaderProps {
   header: HeaderQuery;
@@ -16,6 +17,64 @@ interface HeaderProps {
 }
 
 type Viewport = 'desktop' | 'mobile';
+
+export function PromoBar() {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setHidden(window.scrollY > 0);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, {passive: true});
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <div className={`promo-bar${hidden ? ' hidden' : ''}`}>
+      <div className="promo-bar-track">
+        <div className="promo-bar-content">
+          <span className="promo-bar-item" style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+            <MenuIcon size={14} />
+            Free Delivery on orders above ₹999
+          </span>
+          <span>•</span>
+          <span className="promo-bar-item" style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+            <span className="promo-badge">CODE</span>
+            HPVAAHN15 for 15% OFF
+          </span>
+          <span>•</span>
+          <span className="promo-bar-item" style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+            <span className="promo-badge">CODE</span>
+            DISCOUNT for 20% OFF on orders above ₹1499
+          </span>
+        </div>
+        <div className="promo-bar-content">
+          <span className="promo-bar-item" style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+            <MenuIcon size={14} />
+            Free Delivery on orders above ₹999
+          </span>
+          <span>•</span>
+          <span className="promo-bar-item" style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+            <span className="promo-badge">CODE</span>
+            HPVAAHN15 for 15% OFF
+          </span>
+          <span>•</span>
+          <span className="promo-bar-item" style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+            <span className="promo-badge">CODE</span>
+            DISCOUNT for 20% OFF on orders above ₹1499
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function Header({
   header,

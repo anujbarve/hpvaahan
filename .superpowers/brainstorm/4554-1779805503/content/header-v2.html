@@ -1,0 +1,183 @@
+<h2>Glassmorphism Header v2 — With Marquee + Lucide Icons</h2>
+<p class="subtitle">Updated: marquee promo bar, Lucide icons, scroll-hide behavior</p>
+
+<div class="mockup" style="max-width: 1000px; margin: 0 auto;">
+  <div class="mockup-body" style="padding: 0; background: #f5f5f7;">
+
+    <!-- MARQUEE PROMO BAR (visible on top, hides on scroll) -->
+    <div id="promoBar" style="background: #dc2626; color: white; overflow: hidden; white-space: nowrap; padding: 7px 0; font-size: 13px; letter-spacing: 0.01em; font-weight: 450; transition: transform 0.3s ease, opacity 0.3s ease;">
+      <div style="display: inline-block; animation: marquee 25s linear infinite;">
+        <span style="display: inline-flex; align-items: center; gap: 32px; padding-right: 32px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 12h14M5 7h14"/></svg>
+            Free Delivery on orders above ₹999
+          </span>
+          <span>•</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;">
+            <span style="background: rgba(255,255,255,0.2); padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 600;">CODE</span>
+            HPVAAHN15 for 15% OFF
+          </span>
+          <span>•</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;">
+            <span style="background: rgba(255,255,255,0.2); padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 600;">CODE</span>
+            DISCOUNT for 20% OFF on orders above ₹1499
+          </span>
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 32px; padding-right: 32px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 12h14M5 7h14"/></svg>
+            Free Delivery on orders above ₹999
+          </span>
+          <span>•</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;">
+            <span style="background: rgba(255,255,255,0.2); padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 600;">CODE</span>
+            HPVAAHN15 for 15% OFF
+          </span>
+          <span>•</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;">
+            <span style="background: rgba(255,255,255,0.2); padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 600;">CODE</span>
+            DISCOUNT for 20% OFF on orders above ₹1499
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- GLASS HEADER -->
+    <div style="backdrop-filter: blur(15px); background: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 0 32px; display: flex; align-items: center; height: 72px; position: sticky; top: 0; z-index: 50;">
+
+      <!-- Logo -->
+      <div style="display: flex; align-items: center; flex-shrink: 0;">
+        <div style="width: 120px; height: 40px; background: linear-gradient(135deg, #e5e7eb, #d1d5db); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #9ca3af; letter-spacing: 0.05em;">LOGO</div>
+      </div>
+
+      <!-- Desktop Main Nav (centered) -->
+      <nav style="display: flex; align-items: center; gap: 32px; margin: 0 auto;">
+        <a style="font-size: 15px; font-weight: 500; color: #111; text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid #dc2626; transition: all 0.2s; cursor: pointer;">Car Care</a>
+        <a style="font-size: 15px; font-weight: 500; color: #555; text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: all 0.2s; cursor: pointer;">Bike Care</a>
+        <a style="font-size: 15px; font-weight: 500; color: #555; text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: all 0.2s; cursor: pointer;">Accessories</a>
+        <a style="font-size: 15px; font-weight: 500; color: #555; text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: all 0.2s; cursor: pointer;">Services</a>
+      </nav>
+
+      <!-- Utility Icons (right side) -->
+      <div style="display: flex; align-items: center; gap: 20px; flex-shrink: 0;">
+
+        <!-- Search (expandable) -->
+        <div style="display: flex; align-items: center; background: rgba(0,0,0,0.05); border-radius: 8px; padding: 0 12px; height: 38px; width: 160px; transition: width 0.3s ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span style="color: #aaa; font-size: 13px; margin-left: 8px;">Search products...</span>
+        </div>
+
+        <!-- User -->
+        <div style="cursor: pointer; color: #333; display: flex; align-items: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/></svg>
+        </div>
+
+        <!-- Support Phone with hover tooltip -->
+        <div style="position: relative; cursor: pointer; display: flex; align-items: center; gap: 6px; color: #333;" class="support-trigger">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+
+        <!-- Cart with badge -->
+        <div style="position: relative; cursor: pointer; color: #333;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="21" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span style="position: absolute; top: -6px; right: -8px; background: #dc2626; color: white; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">3</span>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <div style="display: none; margin-left: 4px; cursor: pointer; color: #333;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll placeholder content -->
+    <div style="padding: 60px 32px; text-align: center;">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div style="height: 20px; background: #e5e7eb; border-radius: 4px; margin-bottom: 12px; width: 80%;"></div>
+        <div style="height: 20px; background: #e5e7eb; border-radius: 4px; margin-bottom: 12px; width: 60%;"></div>
+        <div style="height: 20px; background: #e5e7eb; border-radius: 4px; margin-bottom: 24px; width: 70%;"></div>
+        <div style="height: 120px; background: #e5e7eb; border-radius: 8px; margin-bottom: 16px;"></div>
+        <div style="height: 20px; background: #e5e7eb; border-radius: 4px; margin-bottom: 12px; width: 90%;"></div>
+        <div style="height: 20px; background: #e5e7eb; border-radius: 4px; margin-bottom: 12px; width: 50%;"></div>
+        <div style="height: 20px; background: #e5e7eb; border-radius: 4px; margin-bottom: 24px; width: 75%;"></div>
+        <div style="height: 120px; background: #e5e7eb; border-radius: 8px;"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .support-trigger:hover::after {
+    content: "Mon–Sat 10 am – 5 pm | +91 77959 77368";
+    position: absolute;
+    bottom: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: #1f2937;
+    color: white;
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 450;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+</style>
+
+<div class="section">
+  <h3>What's Changed</h3>
+  <div class="options" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div style="background: #f0fdf4; border-radius: 12px; padding: 16px;">
+      <h4 style="margin: 0 0 8px 0;">📜 Marquee Promo</h4>
+      <ul style="margin: 0; font-size: 14px;">
+        <li>Infinite scroll marquee</li>
+        <li>Duplicated content for seamless loop</li>
+        <li>Hides on scroll down (CSS transition)</li>
+      </ul>
+    </div>
+    <div style="background: #eff6ff; border-radius: 12px; padding: 16px;">
+      <h4 style="margin: 0 0 8px 0;">🎯 Lucide Icons</h4>
+      <ul style="margin: 0; font-size: 14px;">
+        <li>Search → Search icon</li>
+        <li>User → User icon</li>
+        <li>Cart → ShoppingCart icon</li>
+        <li>Support → Phone icon</li>
+        <li>Hamburger → Menu icon</li>
+      </ul>
+    </div>
+    <div style="background: #fef2f2; border-radius: 12px; padding: 16px;">
+      <h4 style="margin: 0 0 8px 0;">📱 Scroll Behavior</h4>
+      <ul style="margin: 0; font-size: 14px;">
+        <li>Promo bar visible at top</li>
+        <li>Hides with <code>transform</code> + <code>opacity</code> on scroll</li>
+        <li>Header stays sticky with glass effect</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Mobile Hamburger Detail</h3>
+  <div class="options">
+    <div class="option" data-choice="drawer" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Side Drawer (slide-in)</h3>
+        <p>Full-height overlay menu from the right. Contains secondary nav items + account link. Matches existing Aside component pattern.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="dropdown" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>Dropdown (expand below)</h3>
+        <p>Menu expands downward from hamburger button. More compact, no overlay. Less context switch.</p>
+      </div>
+    </div>
+  </div>
+</div>
