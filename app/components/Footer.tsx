@@ -107,7 +107,7 @@ export function Footer({
                 <NavLink
                   end
                   to={link.href}
-                  className="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-slate-200 hover:text-white transition-colors duration-200 text-sm"
                 >
                   {link.label}
                 </NavLink>
@@ -127,7 +127,7 @@ export function Footer({
                 <NavLink
                   end
                   to={link.href}
-                  className="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-slate-200 hover:text-white transition-colors duration-200 text-sm"
                 >
                   {link.label}
                 </NavLink>
@@ -146,7 +146,7 @@ export function Footer({
               <li>
                 <a
                   href="tel:+917795977368"
-                  className="text-slate-400 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
+                  className="text-slate-200 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
                 >
                   <Phone size={15} className="text-red-500 shrink-0" />
                   +91 77959 77368
@@ -155,13 +155,13 @@ export function Footer({
               <li>
                 <a
                   href="mailto:support-in@kemetyl.com"
-                  className="text-slate-400 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
+                  className="text-slate-200 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
                 >
                   <Mail size={15} className="text-red-500 shrink-0" />
                   support-in@kemetyl.com
                 </a>
               </li>
-              <li className="text-slate-400 text-sm flex items-center gap-2">
+              <li className="text-slate-200 text-sm flex items-center gap-2">
                 <Clock size={15} className="text-red-500 shrink-0" />
                 Mon–Sat 10 am – 5 pm
               </li>
@@ -174,7 +174,7 @@ export function Footer({
             </h4>
             <a
               href="tel:+919900722700"
-              className="text-slate-400 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
+              className="text-slate-200 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
             >
               <Phone size={15} className="text-red-500 shrink-0" />
               +91 9900722700
@@ -185,7 +185,7 @@ export function Footer({
             <h4 className="text-white text-sm tracking-wider uppercase mb-4">
               VISIT OUR LOCATION
             </h4>
-            <p className="text-slate-400 text-sm flex items-start gap-2">
+            <p className="text-slate-200 text-sm flex items-start gap-2">
               <MapPin size={15} className="text-red-500 shrink-0 mt-0.5" />
               <span>
                 Kemetyl India Markets Pvt. Ltd., Lewis Workspace, 18, Nandidurga
@@ -199,7 +199,7 @@ export function Footer({
       {/* Bottom bar */}
       <div className="border-t border-slate-700">
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-xs">
+          <p className="text-slate-200 text-xs">
             &copy; Kemetyl India Markets Pvt. Ltd. All Rights Reserved.
           </p>
           <div className="flex items-center gap-4">
@@ -208,7 +208,7 @@ export function Footer({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-slate-400 hover:text-white transition-colors duration-200"
+              className="text-slate-200 hover:text-white transition-colors duration-200"
             >
               <InstagramIcon size={18} />
             </a>
@@ -217,7 +217,7 @@ export function Footer({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-slate-400 hover:text-white transition-colors duration-200"
+              className="text-slate-200 hover:text-white transition-colors duration-200"
             >
               <FacebookIcon size={18} />
             </a>
@@ -226,7 +226,7 @@ export function Footer({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-slate-400 hover:text-white transition-colors duration-200"
+              className="text-slate-200 hover:text-white transition-colors duration-200"
             >
               <LinkedinIcon size={18} />
             </a>
