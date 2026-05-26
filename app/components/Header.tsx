@@ -7,7 +7,7 @@ import {
 } from '@shopify/hydrogen';
 import type {HeaderQuery, CartApiQueryFragment} from 'storefrontapi.generated';
 import {useAside} from '~/components/Aside';
-import {Menu as MenuIcon, Search, User, Phone} from 'lucide-react';
+import {Menu as MenuIcon, Search, User, Phone, ShoppingCart} from 'lucide-react';
 
 interface HeaderProps {
   header: HeaderQuery;
@@ -212,8 +212,11 @@ function HeaderUtility({
       {/* Search */}
       <div
         ref={searchRef}
+        role="button"
+        tabIndex={0}
         className={`header-search${searchOpen ? ' expanded' : ''}`}
         onClick={() => setSearchOpen(true)}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSearchOpen(true); }}
       >
         <Search size={16} />
         <input type="text" placeholder="Search products..." />
@@ -277,8 +280,15 @@ function CartBadge({count}: {count: number}) {
           url: window.location.href || '',
         } as CartViewPayload);
       }}
+      className="header-icon-btn"
+      aria-label={`Cart (${count} items)`}
     >
-      Cart <span aria-label={`(items: ${count})`}>{count}</span>
+      <ShoppingCart size={20} />
+      {count > 0 && (
+        <span className="cart-badge" aria-hidden="true">
+          {count}
+        </span>
+      )}
     </a>
   );
 }
