@@ -7,7 +7,7 @@ import {
 } from '@shopify/hydrogen';
 import type {HeaderQuery, CartApiQueryFragment} from 'storefrontapi.generated';
 import {useAside} from '~/components/Aside';
-import {Menu as MenuIcon, Search, User, Phone, ShoppingCart} from 'lucide-react';
+import {Menu as MenuIcon, X, Search, User, Phone, ShoppingCart} from 'lucide-react';
 
 interface HeaderProps {
   header: HeaderQuery;
@@ -251,14 +251,15 @@ function HeaderUtility({
 }
 
 function HeaderHamburger() {
-  const {open} = useAside();
+  const {type, open, close} = useAside();
+  const isOpen = type === 'mobile';
   return (
     <button
       className="header-hamburger header-icon-btn reset"
-      onClick={() => open('mobile')}
-      aria-label="Menu"
+      onClick={() => (isOpen ? close() : open('mobile'))}
+      aria-label={isOpen ? 'Close menu' : 'Menu'}
     >
-      <MenuIcon size={22} />
+      {isOpen ? <X size={22} /> : <MenuIcon size={22} />}
     </button>
   );
 }

@@ -169,56 +169,15 @@ aside li {
   z-index: 10;
 }
 
-.overlay .close-outside {
-  background: transparent;
-  border: none;
-  color: transparent;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: calc(100% - var(--aside-width));
-}
-
-.overlay .light {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.overlay .cancel {
-  cursor: default;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
 .overlay.expanded {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
+  z-index: 60;
 }
 /* reveal aside */
 .overlay.expanded aside {
   transform: translateX(calc(var(--aside-width) * -1));
-}
-
-button.reset {
-  border: 0;
-  background: inherit;
-  font-size: inherit;
-}
-
-button.reset > * {
-  margin: 0;
-}
-
-button.reset:not(:has(> *)) {
-  height: 1.5rem;
-  line-height: 1.5rem;
-}
-
-button.reset:hover:not(:has(> *)) {
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 /*
