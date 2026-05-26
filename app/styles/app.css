@@ -447,22 +447,16 @@ aside li {
 * components/Footer
 * --------------------------------------------------
 */
-.footer {
-  background: var(--color-dark);
-  margin-top: auto;
+footer a {
+  color: #E2E8F0;
 }
 
-.footer-menu {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  grid-gap: 1rem;
-  padding: 1rem;
+footer a.active {
+  color: #ffffff;
 }
 
-.footer-menu a {
-  color: var(--color-light);
-  min-width: fit-content;
+footer a:hover {
+  color: #ffffff;
 }
 
 /*
