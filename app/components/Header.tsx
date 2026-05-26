@@ -1,4 +1,4 @@
-import {Suspense, useState, useEffect} from 'react';
+import {Suspense, useState, useEffect, useRef} from 'react';
 import {Await, NavLink, useAsyncValue} from 'react-router';
 import {
   type CartViewPayload,
@@ -7,7 +7,7 @@ import {
 } from '@shopify/hydrogen';
 import type {HeaderQuery, CartApiQueryFragment} from 'storefrontapi.generated';
 import {useAside} from '~/components/Aside';
-import {Menu as MenuIcon} from 'lucide-react';
+import {Menu as MenuIcon, Search, User, Phone} from 'lucide-react';
 
 interface HeaderProps {
   header: HeaderQuery;
@@ -82,19 +82,55 @@ export function Header({
   cart,
   publicStoreDomain,
 }: HeaderProps) {
-  const {shop, menu} = header;
+  const {shop} = header;
   return (
     <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+      {/* Logo */}
+      <NavLink prefetch="intent" to="/" end>
+        <img
+          src="/logo.webp"
+          alt={shop.name}
+          width={120}
+          height={40}
+          style={{display: 'block'}}
+        />
       </NavLink>
-      <HeaderMenu
-        menu={menu}
-        viewport="desktop"
-        primaryDomainUrl={header.shop.primaryDomain.url}
-        publicStoreDomain={publicStoreDomain}
-      />
-      <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+
+      {/* Desktop Main Nav */}
+      <nav className="header-nav-desktop" role="navigation">
+        <NavLink
+          end
+          prefetch="intent"
+          to="/collections/car-care"
+          className="header-nav-link"
+        >
+          Car Care
+        </NavLink>
+        <NavLink
+          prefetch="intent"
+          to="/collections/bike-care"
+          className="header-nav-link"
+        >
+          Bike Care
+        </NavLink>
+        <NavLink
+          prefetch="intent"
+          to="/collections/accessories"
+          className="header-nav-link"
+        >
+          Accessories
+        </NavLink>
+        <NavLink
+          prefetch="intent"
+          to="/pages/services"
+          className="header-nav-link"
+        >
+          Services
+        </NavLink>
+      </nav>
+
+      {/* Utility Icons */}
+      <HeaderUtility isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
 }
@@ -154,43 +190,72 @@ export function HeaderMenu({
   );
 }
 
-function HeaderCtas({
+function HeaderUtility({
   isLoggedIn,
   cart,
 }: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
   return (
-    <nav className="header-ctas" role="navigation">
-      <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
-        <Suspense fallback="Sign in">
-          <Await resolve={isLoggedIn} errorElement="Sign in">
-            {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
+    <div className="header-utility">
+      {/* Search */}
+      <div
+        ref={searchRef}
+        className={`header-search${searchOpen ? ' expanded' : ''}`}
+        onClick={() => setSearchOpen(true)}
+      >
+        <Search size={16} />
+        <input type="text" placeholder="Search products..." />
+      </div>
+
+      {/* User */}
+      <NavLink to="/account" className="header-icon-btn" aria-label="Account">
+        <User size={20} />
+      </NavLink>
+
+      {/* Support */}
+      <div className="support-wrapper header-icon-btn">
+        <Phone size={20} />
+        <div className="support-tooltip">
+          Mon–Sat 10 am – 5 pm | +91 77959 77368
+        </div>
+      </div>
+
+      {/* Cart */}
+      <div style={{position: 'relative'}}>
+        <Suspense fallback={<CartBadge count={0} />}>
+          <Await resolve={cart}>
+            <CartBanner />
           </Await>
         </Suspense>
-      </NavLink>
-      <SearchToggle />
-      <CartToggle cart={cart} />
-    </nav>
+      </div>
+
+      {/* Hamburger */}
+      <HeaderHamburger />
+    </div>
   );
 }
 
-function HeaderMenuMobileToggle() {
+function HeaderHamburger() {
   const {open} = useAside();
   return (
     <button
-      className="header-menu-mobile-toggle reset"
+      className="header-hamburger header-icon-btn reset"
       onClick={() => open('mobile')}
+      aria-label="Menu"
     >
-      <h3>☰</h3>
-    </button>
-  );
-}
-
-function SearchToggle() {
-  const {open} = useAside();
-  return (
-    <button className="reset" onClick={() => open('search')}>
-      Search
+      <MenuIcon size={22} />
     </button>
   );
 }
