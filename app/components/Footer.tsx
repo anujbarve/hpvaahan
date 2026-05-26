@@ -148,7 +148,7 @@ export function Footer({
                   href="tel:+917795977368"
                   className="text-slate-200 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
                 >
-                  <Phone size={15} className="text-red-500 shrink-0" />
+                  <Phone size={15} className="text-red-400 shrink-0" />
                   +91 77959 77368
                 </a>
               </li>
@@ -157,12 +157,12 @@ export function Footer({
                   href="mailto:support-in@kemetyl.com"
                   className="text-slate-200 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
                 >
-                  <Mail size={15} className="text-red-500 shrink-0" />
+                  <Mail size={15} className="text-red-400 shrink-0" />
                   support-in@kemetyl.com
                 </a>
               </li>
               <li className="text-slate-200 text-sm flex items-center gap-2">
-                <Clock size={15} className="text-red-500 shrink-0" />
+                <Clock size={15} className="text-red-400 shrink-0" />
                 Mon–Sat 10 am – 5 pm
               </li>
             </ul>
@@ -176,7 +176,7 @@ export function Footer({
               href="tel:+919900722700"
               className="text-slate-200 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
             >
-              <Phone size={15} className="text-red-500 shrink-0" />
+              <Phone size={15} className="text-red-400 shrink-0" />
               +91 9900722700
             </a>
           </div>
@@ -186,7 +186,7 @@ export function Footer({
               VISIT OUR LOCATION
             </h4>
             <p className="text-slate-200 text-sm flex items-start gap-2">
-              <MapPin size={15} className="text-red-500 shrink-0 mt-0.5" />
+              <MapPin size={15} className="text-red-400 shrink-0 mt-0.5" />
               <span>
                 Kemetyl India Markets Pvt. Ltd., Lewis Workspace, 18, Nandidurga
                 Road, Benson Town, Bangalore-560046
@@ -233,7 +233,7 @@ export function Footer({
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="ml-2 p-2.5 rounded-full bg-red-500 hover:bg-red-600 text-white transition-colors duration-200"
+              className="ml-2 p-[14px] rounded-full bg-red-500 hover:bg-red-600 text-white transition-colors duration-200"
             >
               <ArrowUp size={16} />
             </button>

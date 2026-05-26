@@ -13,6 +13,44 @@ img {
   border-radius: 4px;
 }
 
+/* Skip to main content */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: #dc2626;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Visible focus outlines */
+:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* Touch targets: at least 44x44 on interactive elements */
+.header-icon-btn,
+.header-hamburger,
+.header-search {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Reduce motion for marquee */
+@media (prefers-reduced-motion: reduce) {
+  .promo-bar-track {
+    animation: none;
+  }
+}
+
 /*
 * --------------------------------------------------
 * Non anchor links

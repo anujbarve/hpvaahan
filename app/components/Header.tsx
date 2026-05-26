@@ -84,7 +84,11 @@ export function Header({
 }: HeaderProps) {
   const {shop} = header;
   return (
-    <header className="header">
+    <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <header className="header">
       {/* Logo */}
       <NavLink prefetch="intent" to="/" end>
         <img
@@ -132,6 +136,7 @@ export function Header({
       {/* Utility Icons */}
       <HeaderUtility isLoggedIn={isLoggedIn} cart={cart} />
     </header>
+    </>
   );
 }
 
@@ -214,12 +219,14 @@ function HeaderUtility({
         ref={searchRef}
         role="button"
         tabIndex={0}
+        aria-expanded={searchOpen}
+        aria-label="Search products"
         className={`header-search${searchOpen ? ' expanded' : ''}`}
         onClick={() => setSearchOpen(true)}
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSearchOpen(true); }}
       >
         <Search size={16} />
-        <input type="text" placeholder="Search products..." />
+        <input type="text" placeholder="Search products..." aria-label="Search products" />
       </div>
 
       {/* User */}
@@ -228,9 +235,15 @@ function HeaderUtility({
       </NavLink>
 
       {/* Support */}
-      <div className="support-wrapper header-icon-btn header-hide-mobile">
+      <div
+        className="support-wrapper header-icon-btn header-hide-mobile"
+        tabIndex={0}
+        role="button"
+        aria-label="Support hours: Mon–Sat 10 am – 5 pm | +91 77959 77368"
+        onKeyDown={(e) => { if (e.key === 'Escape') (e.target as HTMLElement).blur(); }}
+      >
         <Phone size={20} />
-        <div className="support-tooltip">
+        <div className="support-tooltip" role="tooltip">
           Mon–Sat 10 am – 5 pm | +91 77959 77368
         </div>
       </div>
@@ -355,13 +368,12 @@ const FALLBACK_HEADER_MENU = {
 
 function activeLinkStyle({
   isActive,
-  isPending,
+  isPending: _isPending,
 }: {
   isActive: boolean;
   isPending: boolean;
 }) {
   return {
     fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
   };
 }
