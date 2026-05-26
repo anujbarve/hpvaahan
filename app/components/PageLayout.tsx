@@ -1,13 +1,13 @@
-import {Await, Link} from 'react-router';
+import {Await, Link, NavLink} from 'react-router';
 import {Suspense, useId} from 'react';
 import type {
   CartApiQueryFragment,
   FooterQuery,
   HeaderQuery,
 } from 'storefrontapi.generated';
-import {Aside} from '~/components/Aside';
+import {Aside, useAside} from '~/components/Aside';
 import {Footer} from '~/components/Footer';
-import {Header, HeaderMenu} from '~/components/Header';
+import {Header, HeaderMenu, PromoBar} from '~/components/Header';
 import {CartMain} from '~/components/CartMain';
 import {
   SEARCH_ENDPOINT,
@@ -37,6 +37,7 @@ export function PageLayout({
       <CartAside cart={cart} />
       <SearchAside />
       <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} />
+      <PromoBar />
       {header && (
         <Header
           header={header}
@@ -158,16 +159,35 @@ function MobileMenuAside({
   header: PageLayoutProps['header'];
   publicStoreDomain: PageLayoutProps['publicStoreDomain'];
 }) {
+  const {close} = useAside();
   return (
     header.menu &&
     header.shop.primaryDomain?.url && (
       <Aside type="mobile" heading="MENU">
-        <HeaderMenu
-          menu={header.menu}
-          viewport="mobile"
-          primaryDomainUrl={header.shop.primaryDomain.url}
-          publicStoreDomain={publicStoreDomain}
-        />
+        <div className="header-menu-mobile">
+          <NavLink end to="/" onClick={close}>
+            Home
+          </NavLink>
+          <NavLink to="/pages/about" onClick={close}>
+            About
+          </NavLink>
+          <NavLink to="/blogs" onClick={close}>
+            Blogs
+          </NavLink>
+          <NavLink to="/pages/contact" onClick={close}>
+            Contact
+          </NavLink>
+          <NavLink to="/pages/track-order" onClick={close}>
+            Track Order
+          </NavLink>
+          <hr />
+          <HeaderMenu
+            menu={header.menu}
+            viewport="mobile"
+            primaryDomainUrl={header.shop.primaryDomain.url}
+            publicStoreDomain={publicStoreDomain}
+          />
+        </div>
       </Aside>
     )
   );
