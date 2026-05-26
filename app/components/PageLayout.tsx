@@ -9,6 +9,7 @@ import {Aside, useAside} from '~/components/Aside';
 import {Footer} from '~/components/Footer';
 import {Header, HeaderMenu, PromoBar} from '~/components/Header';
 import {CartMain} from '~/components/CartMain';
+import {User, Phone, ShoppingCart} from 'lucide-react';
 import {
   SEARCH_ENDPOINT,
   SearchFormPredictive,
@@ -179,6 +180,19 @@ function MobileMenuAside({
           </NavLink>
           <NavLink to="/pages/track-order" onClick={close}>
             Track Order
+          </NavLink>
+          <hr />
+          <NavLink to="/account" onClick={close} style={{display: 'flex', alignItems: 'center', gap: 8}}>
+            <User size={18} />
+            My Account
+          </NavLink>
+          <div style={{display: 'flex', alignItems: 'center', gap: 8, color: '#555', fontSize: '0.9375rem', padding: '0.5rem 0'}}>
+            <Phone size={18} />
+            <span>Mon–Sat 10 am – 5 pm | +91 77959 77368</span>
+          </div>
+          <NavLink to="/cart" onClick={close} style={{display: 'flex', alignItems: 'center', gap: 8}}>
+            <ShoppingCart size={18} />
+            Cart
           </NavLink>
           <hr />
           <HeaderMenu

@@ -223,12 +223,12 @@ function HeaderUtility({
       </div>
 
       {/* User */}
-      <NavLink to="/account" className="header-icon-btn" aria-label="Account">
+      <NavLink to="/account" className="header-icon-btn header-hide-mobile" aria-label="Account">
         <User size={20} />
       </NavLink>
 
       {/* Support */}
-      <div className="support-wrapper header-icon-btn">
+      <div className="support-wrapper header-icon-btn header-hide-mobile">
         <Phone size={20} />
         <div className="support-tooltip">
           Mon–Sat 10 am – 5 pm | +91 77959 77368
@@ -236,7 +236,7 @@ function HeaderUtility({
       </div>
 
       {/* Cart */}
-      <div style={{position: 'relative'}}>
+      <div className="header-hide-mobile" style={{position: 'relative'}}>
         <Suspense fallback={<CartBadge count={0} />}>
           <Await resolve={cart}>
             <CartBanner />
@@ -281,6 +281,7 @@ function CartBadge({count}: {count: number}) {
         } as CartViewPayload);
       }}
       className="header-icon-btn"
+      style={{position: 'relative'}}
       aria-label={`Cart (${count} items)`}
     >
       <ShoppingCart size={20} />
