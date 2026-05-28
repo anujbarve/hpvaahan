@@ -127,7 +127,7 @@ aside {
   background: var(--color-light);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
   height: 100vh;
-  width: min(var(--aside-width), 100vw);
+  width: var(--aside-width);
   position: fixed;
   right: calc(-1 * var(--aside-width));
   top: 0;
@@ -190,6 +190,10 @@ aside li {
   clip-path: inset(50%);
   white-space: nowrap;
   border-width: 0;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -270,6 +274,7 @@ aside li {
 
 .promo-bar-track {
   display: flex;
+  min-width: 0;
   animation: marquee 25s linear infinite;
 }
 
