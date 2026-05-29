@@ -2,10 +2,10 @@ import { ArrowRight } from 'lucide-react';
 
 export function InstagramSection() {
   const posts = [
-    'https://www.instagram.com/reel/DHKqETENO3Y/',
-    'https://www.instagram.com/reel/DGLmrmENneJ/',
-    'https://www.instagram.com/reel/DGIRsr8NKW3/',
-    'https://www.instagram.com/reel/DFzuGhPtT1X/',
+    '',
+    '',
+    '',
+    '',
   ];
 
   return (
@@ -21,14 +21,14 @@ export function InstagramSection() {
             <InstagramIcon className="w-4 h-4 text-rose-500" />
             <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">@hpvaahn</span>
           </div>
-          
+
           <h2 className="text-5xl sm:text-6xl lg:text-[80px] font-black tracking-[-0.04em] leading-[0.95] text-zinc-950 mb-6">
             Join The <br className="md:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">
               Community.
             </span>
           </h2>
-          
+
           <p className="text-lg sm:text-xl leading-relaxed text-slate-500 font-medium max-w-2xl mx-auto">
             Follow us for the latest detailing tips, product launches, and stunning transformations.
           </p>
@@ -38,7 +38,7 @@ export function InstagramSection() {
           {posts.map((url, i) => {
             // Apply different hover rotations for a playful, organic feel
             const rotations = ['group-hover:rotate-2', 'group-hover:-rotate-2', 'group-hover:rotate-1', 'group-hover:-rotate-1'];
-            
+
             return (
               <a
                 key={i}
@@ -49,15 +49,15 @@ export function InstagramSection() {
               >
                 {/* Simulated image gradient background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 group-hover:scale-110 transition-transform duration-700 ease-out" />
-                
+
                 {/* Overlay gradient on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Center Icon */}
                 <div className="relative z-10 w-16 h-16 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500">
                   <InstagramIcon className="w-8 h-8 text-rose-500" />
                 </div>
-                
+
                 {/* Hover text indicator */}
                 <div className="absolute bottom-6 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-10">
                   <span className="text-white font-medium text-sm tracking-wide">Watch Reel</span>
