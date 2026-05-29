@@ -92,6 +92,10 @@ export function Footer({
           <img
             src="/logo.webp"
             alt="Kemetyl India"
+            width={180}
+            height={79}
+            loading="lazy"
+            decoding="async"
             className="max-w-[180px] h-auto"
           />
         </div>

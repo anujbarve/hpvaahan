@@ -73,6 +73,10 @@ export function WhyChooseUs() {
             <img
               src="/bg.jpg"
               alt="High-gloss detailing on a luxury vehicle"
+              width={1920}
+              height={1524}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[2s] group-hover:scale-110"
             />
 

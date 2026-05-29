@@ -159,7 +159,10 @@ export function HeroSection() {
             alt="Cinematic car detailing shot showcasing high-performance automotive care"
             className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1.5s] hover:scale-105"
             src="/bg.jpg"
+            width={1920}
+            height={1080}
             fetchPriority="high"
+            decoding="async"
           />
 
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/60 pointer-events-none z-10" />
