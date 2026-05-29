@@ -169,13 +169,13 @@ function MobileMenuAside({
           <NavLink end to="/" onClick={close}>
             Home
           </NavLink>
-          <NavLink to="/pages/about" onClick={close}>
+          <NavLink to="/about" onClick={close}>
             About
           </NavLink>
           <NavLink to="/blogs" onClick={close}>
             Blogs
           </NavLink>
-          <NavLink to="/pages/contact" onClick={close}>
+          <NavLink to="/contact" onClick={close}>
             Contact
           </NavLink>
           <NavLink to="/pages/track-order" onClick={close}>

@@ -78,10 +78,10 @@ export function Footer({
   ];
 
   const disclaimerLinks = [
-    {label: 'Terms & Conditions', href: '/policies/terms-of-service'},
-    {label: 'Privacy Policy', href: '/policies/privacy-policy'},
-    {label: 'Refund & Return Policy', href: '/policies/refund-policy'},
-    {label: 'Shipping Policy', href: '/policies/shipping-policy'},
+    {label: 'Terms & Conditions', href: '/terms-conditions'},
+    {label: 'Privacy Policy', href: '/privacy-policy'},
+    {label: 'Refund & Return Policy', href: '/refund-policy'},
+    {label: 'Shipping Policy', href: '/shipping-policy'},
   ];
 
   return (
