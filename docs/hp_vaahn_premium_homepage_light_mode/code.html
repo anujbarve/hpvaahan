@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HP VAAHN | Precision Engineered Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container": "#edeef0",
+                "background": "#f8f9fb",
+                "on-tertiary": "#ffffff",
+                "on-primary": "#ffffff",
+                "on-primary-fixed": "#0d1c30",
+                "on-secondary-fixed": "#410008",
+                "inverse-primary": "#b9c7e2",
+                "on-tertiary-fixed": "#241a00",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#241a00",
+                "inverse-on-surface": "#f0f1f3",
+                "secondary": "#d7263d",
+                "secondary-fixed": "#ffdad9",
+                "secondary-container": "#de2b41",
+                "error": "#ba1a1a",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#c5c6cd",
+                "surface-dim": "#d9dadc",
+                "surface-bright": "#f8f9fb",
+                "outline": "#75777d",
+                "on-background": "#0b1a2e",
+                "primary": "#0b1a2e",
+                "primary-fixed-dim": "#b9c7e2",
+                "tertiary-fixed-dim": "#e6c364",
+                "on-secondary-fixed-variant": "#92001f",
+                "on-error": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-secondary": "#ffffff",
+                "primary-fixed": "#d5e3ff",
+                "on-primary-fixed-variant": "#3a475d",
+                "surface-container-highest": "#e1e2e4",
+                "on-tertiary-fixed-variant": "#584400",
+                "secondary-fixed-dim": "#ffb3b2",
+                "on-secondary-container": "#ffffff",
+                "tertiary": "#000000",
+                "surface-tint": "#515f76",
+                "on-surface": "#0b1a2e",
+                "surface-container-high": "#e7e8ea",
+                "inverse-surface": "#2e3132",
+                "on-tertiary-container": "#9e8028",
+                "on-surface-variant": "#44474d",
+                "surface-container-low": "#f3f4f6",
+                "tertiary-fixed": "#ffe08f",
+                "primary-container": "#0d1c30",
+                "surface-variant": "#e1e2e4",
+                "surface": "#ffffff",
+                "on-primary-container": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-md": "16px",
+                "margin-mobile": "20px",
+                "stack-lg": "32px",
+                "section-padding": "80px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "unit": "8px",
+                "stack-sm": "8px",
+                "margin-desktop": "64px",
+                "bento-gap": "16px"
+        },
+        "fontFamily": {
+                "headline-xl": [
+                        "DM Sans"
+                ],
+                "headline-md": [
+                        "DM Sans"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ],
+                "headline-lg-mobile": [
+                        "DM Sans"
+                ],
+                "headline-lg": [
+                        "DM Sans"
+                ],
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "label-sm": [
+                        "DM Sans"
+                ],
+                "label-bold": [
+                        "DM Sans"
+                ],
+                "display-lg": [
+                        "DM Sans"
+                ],
+                "utility-label": [
+                        "Inter"
+                ],
+                "technical-data": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "0.04em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-bold": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "utility-label": [
+                        "12px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "technical-data": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .bento-glow {
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Announcement Bar -->
+<div class="bg-secondary text-white py-2 marquee text-utility-label font-utility-label uppercase tracking-widest border-b border-surface">
+<div class="marquee-content space-x-8">
+<span>USE CODE HPVAAHN15 FOR 15% OFF YOUR FIRST ORDER</span>
+<span>•</span>
+<span>FREE DELIVERY ACROSS INDIA ON ORDERS OVER ₹999</span>
+<span>•</span>
+<span>USE CODE FIRST FOR COMPLIMENTARY MICROFIBER CLOTH</span>
+<span>•</span>
+<span>PRECISION ENGINEERED CARE</span>
+</div>
+</div>
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 fixed top-8 w-full z-50 flex justify-between items-center px-margin-desktop py-4 hidden md:flex">
+<div class="flex items-center gap-8">
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter cursor-pointer">HP VAAHN</span>
+<nav class="hidden lg:flex gap-6 mt-1">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-black/5 px-2 py-1 rounded" href="#">Car Care</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-black/5 px-2 py-1 rounded" href="#">Bike Care</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-black/5 px-2 py-1 rounded" href="#">Accessories</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-black/5 px-2 py-1 rounded" href="#">Services</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:bg-black/5 transition-all duration-300 p-2 rounded-full focus:ring-2 focus:ring-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button class="text-primary hover:bg-black/5 transition-all duration-300 p-2 rounded-full focus:ring-2 focus:ring-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+<button class="text-primary hover:bg-black/5 transition-all duration-300 p-2 rounded-full focus:ring-2 focus:ring-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</header>
+<!-- Mobile Header Fallback -->
+<header class="bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 sticky top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-4 md:hidden">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tighter">HP VAAHN</span>
+<button class="text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[72px] md:pt-[88px]">
+<!-- Hero Section -->
+<section class="relative h-[870px] w-full flex items-end pb-20 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
+<img alt="Cinematic car detailing shot" class="w-full h-full object-cover object-center" data-alt="A dramatic, high-contrast cinematic shot of a sleek sports car perfectly illuminated in a dark, industrial garage setting. The light hits the highly polished, metallic paint, showcasing a mirror-like finish that emphasizes performance-grade protection. The overall mood is luxurious and authoritative, utilizing a deep midnight blue and steel grey palette with subtle high-key reflections. The composition implies precision engineering and high-end automotive care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUHpHFAmsaP5-0hzF2Gq9B6GklGKKsizVdKjV3D8QcY9DDdAHytKn4FltuEi_O5fBknWymtQbLZSXuMSWkS5IYXgVqk6FWz35k9GOE1KOhyxXDsJYkjpmnJJpZtuhUPhIWFzY0EkvSIafwQkn-VsDAluAySIeh5uXr6TE4fBD9LDAuNP22cnVkXn6RYsYxkPI-96qXb6sp8eCcyzyEzqOxsaFQTbXaCIA2_eqDBFbFmvNsEhESWZ8xb7a7t5kM9IfEF4CMV_wBvyw"/>
+</div>
+<!-- Hero Content -->
+<div class="relative z-20 max-w-4xl space-y-8">
+<div class="space-y-4">
+<span class="font-utility-label text-utility-label text-tertiary bg-white/80 px-3 py-1 rounded backdrop-blur-sm border border-black/10">PRECISION FORMULAS</span>
+<h1 class="font-display-lg text-display-lg text-primary">Engineered Clean.<br/>Built for India.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">High-performance automotive care formulations designed to withstand extreme conditions, delivering a cinematic shine and industrial-grade protection.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary hover:bg-secondary/90 text-white font-utility-label text-utility-label py-4 px-8 rounded-lg transition-all duration-300 uppercase focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-secondary">
+                        Shop Car Care
+                    </button>
+<button class="border-2 border-primary hover:bg-black/5 text-primary font-utility-label text-utility-label py-4 px-8 rounded-lg transition-all duration-300 uppercase focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-primary/20">
+                        Shop Bike Care
+                    </button>
+</div>
+</div>
+</section>
+<!-- Trust Strip -->
+<section class="py-8 border-y border-outline-variant/30 bg-surface-container overflow-x-auto no-scrollbar">
+<div class="flex items-center justify-between min-w-max px-margin-mobile md:px-margin-desktop gap-12">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">science</span>
+<span class="font-technical-data text-technical-data text-primary uppercase">European Formulated</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-technical-data text-technical-data text-primary uppercase">HPCL Backed</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">route</span>
+<span class="font-technical-data text-technical-data text-primary uppercase">Tested for India</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">eco</span>
+<span class="font-technical-data text-technical-data text-primary uppercase">Eco-Friendly</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span class="font-technical-data text-technical-data text-primary uppercase">Free Delivery</span>
+</div>
+</div>
+</section>
+<!-- Category Grid (Bento) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto space-y-12 bg-background">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-xl text-headline-xl text-primary">Precision Categories</h2>
+<a class="font-technical-data text-technical-data text-secondary hover:text-secondary-container transition-colors flex items-center gap-2" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap h-[800px] md:h-[600px]">
+<!-- Car Care (Span 8) -->
+<a class="group relative md:col-span-8 rounded-xl overflow-hidden bento-glow bg-surface flex flex-col justify-end p-8 transition-transform duration-300 hover:scale-[1.01] border border-outline-variant/20" href="#">
+<div class="absolute inset-0 z-0">
+<img alt="Car Care Category" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-80" data-alt="A close-up macro shot of dark blue metallic car paint being treated with a high-end liquid ceramic coating. Water beads perfectly on the surface, demonstrating hydrophobic properties. The lighting is cinematic and moody, highlighting the deep midnight blue tones and sharp reflections of a modern automotive design, reflecting a premium, industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb5C7kuuE3Ea1n9WM54B-IRNfYERbhomDpL1sCxb9jFdvtai_AwU5Xzk6mE_Su6KYlKg6bIoq_3JZ75JrgXjfQl68EqEGCf5wcD6vjpYSmxc96YTIUUTdPWNRzCnxvYUKt51Rsvpe3k87W645snyz4abTv5B5bu-PTrRCNgv5unKK4xSc08hIfuLq0TlALiqvqUbRItHJ-O4dKZ0dwN3sjfqp2bVpIel2HpmR-HmqmMqQlnOQ-b7tX9RIfsPL1L1h81CwpevlnMTA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="font-utility-label text-utility-label text-white/90 mb-2 block uppercase">Exterior &amp; Interior</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-2">Car Care Formulations</h3>
+<p class="font-body-md text-body-md text-white/80 max-w-md">Engineered shampoos, waxes, and detailers for a showroom finish that endures.</p>
+</div>
+<div class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-white">arrow_forward</span>
+</div>
+</a>
+<!-- Bike Care (Span 4) -->
+<a class="group relative md:col-span-4 rounded-xl overflow-hidden bento-glow bg-surface flex flex-col justify-end p-8 transition-transform duration-300 hover:scale-[1.01] border border-outline-variant/20" href="#">
+<div class="absolute inset-0 z-0">
+<img alt="Bike Care Category" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-80" data-alt="A detailed shot of a high-performance motorcycle engine and exhaust pipe gleaming under dramatic studio lighting. The metal surfaces are meticulously clean, showcasing steel grey and deep black textures. A subtle red accent light highlights the precision mechanical details, embodying a sense of rugged durability and premium care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLZeGUykr0suFJqJBurzwhGW49xSoZ6a9v8YA57dyom60ah44M2mVliB5ofkdXFNOg1QclBFZLJ4OZGGUro3310PeJrxHt6NUpn495NNGi6vxp821kFEcn3qmtzCwVlERilQ_5USdt9iaLF_aC7FlON6dkhbMVtMFsPS_qybxJaZS61IPK2TmAq6AmxXHdqU2q1tFjBSiTfLY7s_BewkeNstJ-tCgGFY8jXcXKoGP0eYJnR5mFkWLnLIQSvWD9psT541eXD3mX86s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="font-utility-label text-utility-label text-white/90 mb-2 block uppercase">Performance</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-2">Bike Care</h3>
+</div>
+</a>
+<!-- Accessories (Span 6) -->
+<a class="group relative md:col-span-6 rounded-xl overflow-hidden bento-glow bg-surface-container flex flex-col justify-between p-8 transition-transform duration-300 hover:scale-[1.01] border border-outline-variant/20" href="#">
+<div class="relative z-10 flex justify-between items-start">
+<span class="font-utility-label text-utility-label text-primary uppercase">Hardware &amp; Tools</span>
+<span class="material-symbols-outlined text-primary">construction</span>
+</div>
+<div class="relative z-10 mt-20">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2">Pro Accessories</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Premium microfibers, brushes, and applicator pads.</p>
+</div>
+</a>
+<!-- Kits (Span 6) -->
+<a class="group relative md:col-span-6 rounded-xl overflow-hidden bento-glow bg-white flex flex-col justify-between p-8 transition-transform duration-300 hover:scale-[1.01] border border-outline-variant/20" href="#">
+<div class="relative z-10 flex justify-between items-start">
+<span class="font-utility-label text-utility-label text-primary uppercase">Bundled Value</span>
+<span class="material-symbols-outlined text-primary">package</span>
+</div>
+<div class="relative z-10 mt-20">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2">Curated Kits</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Complete regimen solutions for specific automotive surfaces.</p>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container border-t border-white/10 w-full py-20 px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-bento-gap">
+<div class="col-span-1 space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-white tracking-tighter">HP VAAHN</h2>
+<p class="font-body-md text-body-md text-white/70 max-w-xs">Precision engineered automotive care formulations for the uncompromising Indian enthusiast.</p>
+<p class="font-utility-label text-utility-label text-white/40 uppercase mt-8">© 2024 HP VAAHN. PRECISION ENGINEERED CARE.</p>
+</div>
+<div class="col-span-1 space-y-4">
+<h3 class="font-technical-data text-technical-data text-white uppercase">Explore</h3>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Car Care</a></li>
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Bike Care</a></li>
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Accessories</a></li>
+</ul>
+</div>
+<div class="col-span-1 space-y-4">
+<h3 class="font-technical-data text-technical-data text-white uppercase">Brand</h3>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Brand Story</a></li>
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Technical Data</a></li>
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Find a Detailer</a></li>
+</ul>
+</div>
+<div class="col-span-1 space-y-4">
+<h3 class="font-technical-data text-technical-data text-white uppercase">Support</h3>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Support</a></li>
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-white/70 hover:text-secondary transition-colors" href="#">Shipping</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

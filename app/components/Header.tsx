@@ -89,53 +89,55 @@ export function Header({
         Skip to main content
       </a>
       <header className="header">
-      {/* Logo */}
-      <NavLink prefetch="intent" to="/" end>
-        <img
-          src="/logo.webp"
-          alt={shop.name}
-          width={120}
-          height={40}
-          style={{display: 'block'}}
-        />
-      </NavLink>
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full relative">
+          {/* Logo */}
+          <NavLink prefetch="intent" to="/" end>
+            <img
+              src="/logo.webp"
+              alt={shop.name}
+              width={120}
+              height={40}
+              style={{display: 'block'}}
+            />
+          </NavLink>
 
-      {/* Desktop Main Nav */}
-      <nav className="header-nav-desktop" role="navigation">
-        <NavLink
-          end
-          prefetch="intent"
-          to="/collections/car-care"
-          className="header-nav-link"
-        >
-          Car Care
-        </NavLink>
-        <NavLink
-          prefetch="intent"
-          to="/collections/bike-care"
-          className="header-nav-link"
-        >
-          Bike Care
-        </NavLink>
-        <NavLink
-          prefetch="intent"
-          to="/collections/accessories"
-          className="header-nav-link"
-        >
-          Accessories
-        </NavLink>
-        <NavLink
-          prefetch="intent"
-          to="/pages/services"
-          className="header-nav-link"
-        >
-          Services
-        </NavLink>
-      </nav>
+          {/* Desktop Main Nav */}
+          <nav className="header-nav-desktop" role="navigation">
+            <NavLink
+              end
+              prefetch="intent"
+              to="/collections/car-care"
+              className="header-nav-link"
+            >
+              Car Care
+            </NavLink>
+            <NavLink
+              prefetch="intent"
+              to="/collections/bike-care"
+              className="header-nav-link"
+            >
+              Bike Care
+            </NavLink>
+            <NavLink
+              prefetch="intent"
+              to="/collections/accessories"
+              className="header-nav-link"
+            >
+              Accessories
+            </NavLink>
+            <NavLink
+              prefetch="intent"
+              to="/pages/services"
+              className="header-nav-link"
+            >
+              Services
+            </NavLink>
+          </nav>
 
-      {/* Utility Icons */}
-      <HeaderUtility isLoggedIn={isLoggedIn} cart={cart} />
-    </header>
+          {/* Utility Icons */}
+          <HeaderUtility isLoggedIn={isLoggedIn} cart={cart} />
+        </div>
+      </header>
     </>
   );
 }

@@ -235,7 +235,7 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   height: var(--header-height);
-  padding: 0 1.5rem;
+  padding: 0;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -243,7 +243,7 @@ body {
 
 @media (max-width: 63.99em) {
   .header {
-    padding: 0 1rem;
+    padding: 0;
     height: 64px;
   }
 }

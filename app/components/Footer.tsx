@@ -86,7 +86,7 @@ export function Footer({
 
   return (
     <footer className="bg-[#0A192F] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
         {/* Brand */}
         <div className="flex flex-col items-center sm:items-start">
           <img
@@ -198,7 +198,7 @@ export function Footer({
 
       {/* Bottom bar */}
       <div className="border-t border-slate-700">
-        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-200 text-xs">
             &copy; Kemetyl India Markets Pvt. Ltd. All Rights Reserved.
           </p>
