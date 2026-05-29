@@ -1,18 +1,18 @@
 import {useLoaderData, Link} from 'react-router';
 import type {Route} from './+types/($locale).policies._index';
-import type {PoliciesQuery, PolicyItemFragment} from 'storefrontapi.generated';
+import type {PoliciesQuery, PolicyItemBasicFragment} from 'storefrontapi.generated';
 
 export async function loader({context}: Route.LoaderArgs) {
   const data: PoliciesQuery = await context.storefront.query(POLICIES_QUERY);
 
   const shopPolicies = data.shop;
-  const policies: PolicyItemFragment[] = [
+  const policies: PolicyItemBasicFragment[] = [
     shopPolicies?.privacyPolicy,
     shopPolicies?.shippingPolicy,
     shopPolicies?.termsOfService,
     shopPolicies?.refundPolicy,
     shopPolicies?.subscriptionPolicy,
-  ].filter((policy): policy is PolicyItemFragment => policy != null);
+  ].filter((policy): policy is PolicyItemBasicFragment => policy != null);
 
   if (!policies.length) {
     throw new Response('No policies found', {status: 404});
@@ -39,7 +39,7 @@ export default function Policies() {
 }
 
 const POLICIES_QUERY = `#graphql
-  fragment PolicyItem on ShopPolicy {
+  fragment PolicyItemBasic on ShopPolicy {
     id
     title
     handle
@@ -48,16 +48,16 @@ const POLICIES_QUERY = `#graphql
     @inContext(country: $country, language: $language) {
     shop {
       privacyPolicy {
-        ...PolicyItem
+        ...PolicyItemBasic
       }
       shippingPolicy {
-        ...PolicyItem
+        ...PolicyItemBasic
       }
       termsOfService {
-        ...PolicyItem
+        ...PolicyItemBasic
       }
       refundPolicy {
-        ...PolicyItem
+        ...PolicyItemBasic
       }
       subscriptionPolicy {
         id

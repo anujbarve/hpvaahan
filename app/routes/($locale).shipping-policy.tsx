@@ -33,8 +33,14 @@ export default function ShippingPolicyPage() {
         title={policy.title}
         breadcrumbs={[{label: 'Home', href: '/'}, {label: policy.title}]}
       />
-      <section className="mx-auto max-w-4xl px-6 py-16">
-        <LegalContent html={policy.body} />
+      <section className="relative overflow-hidden bg-white py-16 md:py-24">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-red-400/5 rounded-full blur-3xl" />
+          <div className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-red-500/5 rounded-full blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-4xl px-6 py-8">
+          <LegalContent html={policy.body} />
+        </div>
       </section>
     </>
   );

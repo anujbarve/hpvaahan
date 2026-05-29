@@ -60,14 +60,14 @@ export default function Policy() {
 
 // NOTE: https://shopify.dev/docs/api/storefront/latest/objects/Shop
 const POLICY_CONTENT_QUERY = `#graphql
-  fragment Policy on ShopPolicy {
+  fragment PolicyDetail on ShopPolicy {
     body
     handle
     id
     title
     url
   }
-  query Policy(
+  query PolicyDetailQuery(
     $country: CountryCode
     $language: LanguageCode
     $privacyPolicy: Boolean!
@@ -77,16 +77,16 @@ const POLICY_CONTENT_QUERY = `#graphql
   ) @inContext(language: $language, country: $country) {
     shop {
       privacyPolicy @include(if: $privacyPolicy) {
-        ...Policy
+        ...PolicyDetail
       }
       shippingPolicy @include(if: $shippingPolicy) {
-        ...Policy
+        ...PolicyDetail
       }
       termsOfService @include(if: $termsOfService) {
-        ...Policy
+        ...PolicyDetail
       }
       refundPolicy @include(if: $refundPolicy) {
-        ...Policy
+        ...PolicyDetail
       }
     }
   }
