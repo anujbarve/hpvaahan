@@ -106,17 +106,17 @@ export function Header({
             <NavLink
               end
               prefetch="intent"
-              to="/collections/car-care"
+              to="/collections/car"
               className="header-nav-link"
             >
-              Car Care
+              Car
             </NavLink>
             <NavLink
               prefetch="intent"
-              to="/collections/bike-care"
+              to="/collections/bike"
               className="header-nav-link"
             >
-              Bike Care
+              Bike
             </NavLink>
             <NavLink
               prefetch="intent"

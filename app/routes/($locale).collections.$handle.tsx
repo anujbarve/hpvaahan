@@ -69,21 +69,43 @@ export default function Collection() {
   const {collection} = useLoaderData<typeof loader>();
 
   return (
-    <div className="collection">
-      <h1>{collection.title}</h1>
-      <p className="collection-description">{collection.description}</p>
-      <PaginatedResourceSection<ProductItemFragment>
-        connection={collection.products}
-        resourcesClassName="products-grid"
-      >
-        {({node: product, index}) => (
-          <ProductItem
-            key={product.id}
-            product={product}
-            loading={index < 8 ? 'eager' : undefined}
-          />
-        )}
-      </PaginatedResourceSection>
+    <div className="w-full bg-slate-50 min-h-screen pb-12 lg:pb-24">
+      {/* Cinematic Header */}
+      <section className="relative w-full bg-zinc-950 py-20 lg:py-32 overflow-hidden selection:bg-rose-500/20 selection:text-rose-900">
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-500/10 rounded-full mix-blend-screen blur-[120px] opacity-50 transform translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-400/10 rounded-full mix-blend-screen blur-[120px] opacity-40 transform -translate-x-1/3 translate-y-1/3" />
+        </div>
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white mb-6">
+              {collection.title}
+            </h1>
+            {collection.description && (
+              <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed">
+                {collection.description}
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Products Grid Section */}
+      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <PaginatedResourceSection<ProductItemFragment>
+          connection={collection.products}
+          resourcesClassName="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8"
+        >
+          {({node: product, index}) => (
+            <ProductItem
+              key={product.id}
+              product={product}
+              loading={index < 8 ? 'eager' : undefined}
+            />
+          )}
+        </PaginatedResourceSection>
+      </section>
+
       <Analytics.CollectionView
         data={{
           collection: {

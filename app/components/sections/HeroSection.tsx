@@ -3,7 +3,7 @@ import { ArrowRight, Shield, Sparkles, Droplets } from 'lucide-react';
 
 export function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen bg-slate-50 overflow-hidden selection:bg-rose-500/20 selection:text-rose-900 font-sans flex flex-col items-center pt-24 pb-12 lg:pt-32">
+    <section className="relative w-full min-h-screen lg:min-h-[108vh] bg-slate-50 overflow-hidden selection:bg-rose-500/20 selection:text-rose-900 font-sans flex flex-col items-center pt-24 pb-24 lg:pt-32 lg:pb-36">
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0); }
@@ -107,7 +107,7 @@ export function HeroSection() {
         {/* Call to Actions */}
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto z-20 animate-actions">
           <Link
-            to="/collections/all"
+            to="/collections/car"
             className="group relative flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 bg-zinc-950 rounded-full overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
@@ -116,7 +116,7 @@ export function HeroSection() {
           </Link>
 
           <Link
-            to="/collections/all"
+            to="/collections/bike"
             className="flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 bg-white/80 backdrop-blur-md text-zinc-950 text-base font-bold tracking-wide rounded-full border border-slate-200/80 transition-all duration-300 hover:bg-white hover:border-slate-300 hover:shadow-lg hover:-translate-y-1 focus:ring-2 focus:ring-offset-2 focus:ring-slate-400"
           >
             Shop Bike Care
@@ -152,21 +152,19 @@ export function HeroSection() {
         </div>
 
         {/* Main Image Container */}
-        <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] bg-zinc-900 rounded-t-[2rem] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.15)] ring-1 ring-black/5 tilt-card mt-auto">
+        <div className="relative w-full aspect-[4/3] md:aspect-[16/10] lg:aspect-[16/8] bg-zinc-900 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-zinc-950/30 ring-1 ring-black/5 tilt-card mt-auto">
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent z-20" />
 
           <img
             alt="Cinematic car detailing shot showcasing high-performance automotive care"
             className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1.5s] hover:scale-105"
-            src="/bg.jpg"
+            src="/banner.jpg"
             width={1920}
             height={1080}
             fetchPriority="high"
             decoding="async"
           />
 
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/60 pointer-events-none z-10" />
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent pointer-events-none z-10" />
         </div>
       </div>
     </section>

@@ -18,15 +18,15 @@ export function ProductForm({
   const navigate = useNavigate();
   const {open} = useAside();
   return (
-    <div className="product-form">
+    <div className="flex flex-col gap-8 mt-8">
       {productOptions.map((option) => {
         // If there is only a single value in the option values, don't display the option
         if (option.optionValues.length === 1) return null;
 
         return (
-          <div className="product-options" key={option.name}>
-            <h5>{option.name}</h5>
-            <div className="product-options-grid">
+          <div className="flex flex-col gap-4" key={option.name}>
+            <h5 className="text-sm font-bold text-zinc-950 uppercase tracking-wider">{option.name}</h5>
+            <div className="flex flex-wrap gap-3">
               {option.optionValues.map((value) => {
                 const {
                   name,
@@ -39,6 +39,13 @@ export function ProductForm({
                   swatch,
                 } = value;
 
+                const baseStyles = "relative px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 overflow-hidden";
+                const stateStyles = selected
+                  ? "bg-zinc-950 text-white shadow-md ring-2 ring-zinc-950 ring-offset-2"
+                  : available
+                  ? "bg-white text-zinc-600 border border-slate-200 hover:border-zinc-950 hover:text-zinc-950"
+                  : "bg-slate-50 text-slate-400 border border-slate-200 opacity-60 line-through cursor-not-allowed";
+
                 if (isDifferentProduct) {
                   // SEO
                   // When the variant is a combined listing child product
@@ -46,18 +53,12 @@ export function ProductForm({
                   // as an anchor tag
                   return (
                     <Link
-                      className="product-options-item"
+                      className={`${baseStyles} ${stateStyles}`}
                       key={option.name + name}
                       prefetch="intent"
                       preventScrollReset
                       replace
                       to={`/products/${handle}?${variantUriQuery}`}
-                      style={{
-                        border: selected
-                          ? '1px solid black'
-                          : '1px solid transparent',
-                        opacity: available ? 1 : 0.3,
-                      }}
                     >
                       <ProductOptionSwatch swatch={swatch} name={name} />
                     </Link>
@@ -71,16 +72,8 @@ export function ProductForm({
                   return (
                     <button
                       type="button"
-                      className={`product-options-item${
-                        exists && !selected ? ' link' : ''
-                      }`}
+                      className={`${baseStyles} ${stateStyles}`}
                       key={option.name + name}
-                      style={{
-                        border: selected
-                          ? '1px solid black'
-                          : '1px solid transparent',
-                        opacity: available ? 1 : 0.3,
-                      }}
                       disabled={!exists}
                       onClick={() => {
                         if (!selected) {
@@ -97,29 +90,31 @@ export function ProductForm({
                 }
               })}
             </div>
-            <br />
           </div>
         );
       })}
-      <AddToCartButton
-        disabled={!selectedVariant || !selectedVariant.availableForSale}
-        onClick={() => {
-          open('cart');
-        }}
-        lines={
-          selectedVariant
-            ? [
-                {
-                  merchandiseId: selectedVariant.id,
-                  quantity: 1,
-                  selectedVariant,
-                },
-              ]
-            : []
-        }
-      >
-        {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
-      </AddToCartButton>
+      
+      <div className="pt-8 border-t border-slate-200/60 mt-4">
+        <AddToCartButton
+          disabled={!selectedVariant || !selectedVariant.availableForSale}
+          onClick={() => {
+            open('cart');
+          }}
+          lines={
+            selectedVariant
+              ? [
+                  {
+                    merchandiseId: selectedVariant.id,
+                    quantity: 1,
+                    selectedVariant,
+                  },
+                ]
+              : []
+          }
+        >
+          {selectedVariant?.availableForSale ? 'Add To Cart' : 'Sold Out'}
+        </AddToCartButton>
+      </div>
     </div>
   );
 }

@@ -4,10 +4,10 @@ import { ArrowRight, Package, Shield, Leaf, Truck, ChevronRight } from 'lucide-r
 export function ProductCategories() {
   const categories = [
     {
-      title: 'Car Care',
+      title: 'Car',
       desc: 'Professional-grade formulations for a cinematic showroom shine and industrial-grade protection.',
       icon: Package,
-      href: '/collections/frontpage',
+      href: '/collections/car',
       // Bento: Large primary card
       className: 'md:col-span-2 md:row-span-2 bg-zinc-950 text-white shadow-2xl ring-1 ring-white/10',
       iconClass: 'text-zinc-950',
@@ -18,10 +18,10 @@ export function ProductCategories() {
       imageOverlay: 'bg-gradient-to-br from-rose-500/20 via-transparent to-transparent',
     },
     {
-      title: 'Bike & Scooter Care',
+      title: 'Bike',
       desc: 'Precision maintenance essentials for a spotless, protected ride.',
       icon: Shield,
-      href: '/collections/frontpage',
+      href: '/collections/bike',
       // Bento: Standard square
       className: 'md:col-span-1 md:row-span-1 bg-white border border-slate-200/60 shadow-xl shadow-slate-200/20',
       iconClass: 'text-rose-600',
@@ -49,7 +49,7 @@ export function ProductCategories() {
       title: 'Maintenance Fluids',
       desc: 'Engineered fluids to keep your vehicle running flawlessly.',
       icon: Truck,
-      href: '/collections/frontpage',
+      href: '/collections/maintenance-products',
       // Bento: Wide rectangle
       className: 'md:col-span-2 md:row-span-1 bg-white border border-slate-200/60 shadow-xl shadow-slate-200/20',
       iconClass: 'text-blue-600',

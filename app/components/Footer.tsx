@@ -71,8 +71,8 @@ export function Footer({
   const scrollToTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
 
   const productLinks = [
-    {label: 'Car Care', href: '/collections/car-care'},
-    {label: 'Bike & Scooter Care', href: '/collections/bike-scooter-care'},
+    {label: 'Car', href: '/collections/car'},
+    {label: 'Bike', href: '/collections/bike'},
     {label: 'Microfiber Cloth', href: '/collections/microfiber-cloth'},
     {label: 'Maintenance Products', href: '/collections/maintenance-products'},
   ];

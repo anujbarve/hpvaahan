@@ -98,27 +98,42 @@ export default function Product() {
   const {title, descriptionHtml} = product;
 
   return (
-    <div className="product">
-      <ProductImage image={selectedVariant?.image} />
-      <div className="product-main">
-        <h1>{title}</h1>
-        <ProductPrice
-          price={selectedVariant?.price}
-          compareAtPrice={selectedVariant?.compareAtPrice}
-        />
-        <br />
-        <ProductForm
-          productOptions={productOptions}
-          selectedVariant={selectedVariant}
-        />
-        <br />
-        <br />
-        <p>
-          <strong>Description</strong>
-        </p>
-        <br />
-        <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
-        <br />
+    <div className="w-full bg-slate-50 min-h-screen pt-24 pb-16 lg:py-32 selection:bg-rose-500/20 selection:text-rose-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start">
+          {/* Left Column: Image */}
+          <div className="w-full relative z-10">
+            <ProductImage image={selectedVariant?.image} />
+          </div>
+
+          {/* Right Column: Details */}
+          <div className="w-full flex flex-col pt-4 lg:pt-8 relative z-20">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-zinc-950 tracking-tight leading-[1.1] mb-6">
+              {title}
+            </h1>
+            
+            <ProductPrice
+              price={selectedVariant?.price}
+              compareAtPrice={selectedVariant?.compareAtPrice}
+            />
+            
+            <ProductForm
+              productOptions={productOptions}
+              selectedVariant={selectedVariant}
+            />
+
+            <div className="mt-16 pt-10 border-t border-slate-200/60">
+              <h3 className="text-xl font-bold text-zinc-950 tracking-tight mb-6 flex items-center gap-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-rose-600"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                Product Overview
+              </h3>
+              <div 
+                className="prose prose-slate prose-lg text-slate-600 leading-relaxed max-w-none prose-p:mb-4 prose-a:text-rose-600 prose-a:no-underline hover:prose-a:underline"
+                dangerouslySetInnerHTML={{__html: descriptionHtml}} 
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <Analytics.ProductView
         data={{
