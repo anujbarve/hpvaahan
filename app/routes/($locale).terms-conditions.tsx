@@ -1,5 +1,5 @@
 import {useLoaderData, type MetaFunction} from 'react-router';
-import {type Route} from './+types/terms-conditions';
+import {type Route} from './+types/($locale).terms-conditions';
 import {PageHero} from '~/components/PageHero';
 import {LegalContent} from '~/components/LegalContent';
 import {POLICY_QUERY} from '~/lib/policies';

@@ -1,5 +1,5 @@
 import {useLoaderData, type MetaFunction} from 'react-router';
-import {type Route} from './+types/about';
+import {type Route} from './+types/($locale).about';
 import {PageHero} from '~/components/PageHero';
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {

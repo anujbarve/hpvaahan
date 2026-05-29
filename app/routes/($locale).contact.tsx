@@ -1,5 +1,5 @@
 import {useLoaderData, type MetaFunction} from 'react-router';
-import {type Route} from './+types/contact';
+import {type Route} from './+types/($locale).contact';
 import {PageHero} from '~/components/PageHero';
 import {Phone, Mail, MapPin, Clock} from 'lucide-react';
 
